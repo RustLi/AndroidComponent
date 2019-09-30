@@ -1,0 +1,28 @@
+/**
+ * Shared file between builds so that they can all use the same dependencies and
+ * maven repositories.
+ **/
+
+def versions = [:]
+versions.support = "29.0.2"
+versions.constraint_layout = "1.1.3"
+versions.android_gradle_plugin = '3.5.0'
+versions.multidex = "1.0.2"
+versions.app_compat = "1.0.2"
+
+
+def support = [:]
+support.constraint_layout = "androidx.constraintlayout:constraintlayout:$versions.constraint_layout"
+support.app_compat = "androidx.appcompat:appcompat:$versions.app_compat"
+support.android_gradle_plugin = "com.android.tools.build:gradle:$versions.android_gradle_plugin"
+support.multidex = "com.android.support:multidex:$versions.multidex"
+ext.support = support
+
+
+def build_versions = [:]
+build_versions.min_sdk = 15
+build_versions.target_sdk = 29
+build_versions.build_tools = "29.0.2"
+build_versions.versionCode = 1
+build_versions.versionName = "1.0"
+ext.build_versions = build_versions
